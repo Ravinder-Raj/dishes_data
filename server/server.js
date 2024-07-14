@@ -1,17 +1,16 @@
-
 const express = require('express');
 const connectDB = require('./config/db');
 const dishRoutes = require('./routes/dishRoutes');
 const dotenv = require('dotenv');
+const cors = require('cors'); // Ensure cors is required
 
 dotenv.config();
 
 const app = express();
-const app = express();
-app.use(cors({
-  origin: 'https://dishes-data.netlify.app/'
-}));
 
+app.use(cors({
+  origin: 'https://dishes-data.netlify.app'
+}));
 
 // Connect to MongoDB
 connectDB();
